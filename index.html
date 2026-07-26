@@ -1,97 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <p> Calculator</p>
-  <p>
-  <button onclick="
-    Update('1');">
-    1
-  </button>
-  <button onclick="
-    Update('2');">
-    2
-  </button>
-  <button onclick="
-    Update('3');">
-    3
-  </button>
-  <button onclick="
-    Update('+');">
-    +
-  </button>
-  </p>
 
-  <p>
-  <button onclick="
-    Update('4');">
-    4
-  </button>
-  <button onclick="
-    Update('5');">
-    5
-  </button>
-  <button onclick="
-    Update('6');">
-    6
-  </button>
-  <button onclick="
-    Update('-');">
-    -
-  </button>
-  </p>
+<div class="calculator">
 
-  <p>
-  <button onclick="
-    Update('7');">
-    7
-  </button>
-  <button onclick="
-    Update('8');">
-    8
-  </button>
-  <button onclick="
-    Update('9');">
-    9
-  </button>
-  <button onclick="
-    Update('*');">
-    *
-  </button>
-  </p>
+    <input type="text" id="display" readonly>
 
-  <p>
-  <button onclick="
-    Update('0');">
-    0
-  </button>
-  <button onclick="
-    Update('.');">
-    .
-  </button>
-  <button onclick="
-     calc=eval(calc);
-    console.log(calc);">
-    =
-  </button>
-  <button onclick="
-    Update('/');">
-    /
-  </button>
-  </p>
-  <button onclick="calc='';
-  localStorage.removeItem('calc');
-  console.log('Cleared');">Clear</button>
-  <script>
-    let calc=JSON.parse(localStorage.getItem('calc')) || '';
-    function Update(value){
-      calc+=value;
-      console.log(calc);
-      localStorage.setItem('calc',JSON.stringify(calc));
-    }
-  </script>
+    <div class="buttons">
+
+        <button onclick="clearDisplay()" class="clear">C</button>
+        <button onclick="Update('/')" class="operator">÷</button>
+        <button onclick="Update('*')" class="operator">×</button>
+        <button onclick="Update('-')" class="operator">−</button>
+
+        <button onclick="Update('7')">7</button>
+        <button onclick="Update('8')">8</button>
+        <button onclick="Update('9')">9</button>
+        <button onclick="Update('+')" class="operator">+</button>
+
+        <button onclick="Update('4')">4</button>
+        <button onclick="Update('5')">5</button>
+        <button onclick="Update('6')">6</button>
+        <button onclick="calculate()" class="equal">=</button>
+
+        <button onclick="Update('1')">1</button>
+        <button onclick="Update('2')">2</button>
+        <button onclick="Update('3')">3</button>
+        <button onclick="Update('.')">.</button>
+
+        <button onclick="Update('0')" class="zero">0</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
-
