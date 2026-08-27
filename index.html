@@ -1,48 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-
-    <link rel="stylesheet" href="style.css">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <p> Calculator</p>
+  <p class="js-result"></p>
+  <p>
+  <button class="num-key" onclick="
+    Update('1');">
+    1
+  </button>
+  <button class="num-key" onclick="
+    Update('2');">
+    2
+  </button>
+  <button class="num-key" onclick="
+    Update('3');">
+    3
+  </button>
+  <button class="sym-key" onclick="
+    Update('+');">
+    +
+  </button>
+  </p>
 
-<div class="calculator">
+  <p>
+  <button class="num-key" onclick="
+    Update('4');">
+    4
+  </button>
+  <button class="num-key" onclick="
+    Update('5');">
+    5
+  </button>
+  <button class="num-key" onclick="
+    Update('6');">
+    6
+  </button>
+  <button class="sym-key" onclick="
+    Update('-');">
+    -
+  </button>
+  </p>
 
-    <input type="text" id="display" readonly>
+  <p>
+  <button class="num-key" onclick="
+    Update('7');">
+    7
+  </button>
+  <button class="num-key" onclick="
+    Update('8');">
+    8
+  </button>
+  <button class="num-key" onclick="
+    Update('9');">
+    9
+  </button>
+  <button class="sym-key" onclick="
+    Update('*');">
+    *
+  </button>
+  </p>
 
-    <div class="buttons">
-
-        <button onclick="clearDisplay()" class="clear">C</button>
-        <button onclick="Update('/')" class="operator">÷</button>
-        <button onclick="Update('*')" class="operator">×</button>
-        <button onclick="Update('-')" class="operator">−</button>
-
-        <button onclick="Update('7')">7</button>
-        <button onclick="Update('8')">8</button>
-        <button onclick="Update('9')">9</button>
-        <button onclick="Update('+')" class="operator">+</button>
-
-        <button onclick="Update('4')">4</button>
-        <button onclick="Update('5')">5</button>
-        <button onclick="Update('6')">6</button>
-        <button onclick="calculate()" class="equal">=</button>
-
-        <button onclick="Update('1')">1</button>
-        <button onclick="Update('2')">2</button>
-        <button onclick="Update('3')">3</button>
-        <button onclick="Update('.')">.</button>
-
-        <button onclick="Update('0')" class="zero">0</button>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <p>
+  <button class="num-key" onclick="
+    Update('0');">
+    0
+  </button>
+  <button class="num-key" onclick="
+    Update('.');">
+    .
+  </button>
+  <button class="num-key" onclick="
+     calc=eval(calc);
+    display();
+    localStorage.setItem('calc',calc);">
+    =
+  </button>
+  <button class="sym-key" onclick="
+    Update('/');">
+    /
+  </button>
+  </p>
+  <button class="clear-key" onclick="calc='';
+  localStorage.removeItem('calc');
+  display();
+  ">Clear</button>
+  <script src="script.js">
+  </script>
 </body>
 </html>
